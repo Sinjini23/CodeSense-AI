@@ -201,3 +201,11 @@ app.post("/api/mock-interview/evaluate", async (req, res) => {
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`CodeSense AI server running on port ${PORT}`)
 })
+
+process.on('uncaughtException', (error) => {
+  console.error('Uncaught exception:', error)
+})
+
+process.on('unhandledRejection', (reason) => {
+  console.error('Unhandled rejection:', reason)
+})
